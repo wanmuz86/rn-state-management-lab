@@ -1,7 +1,7 @@
 import React from "react"
 import { View, Text, Button, StyleSheet } from "react-native"
 import { useSelector, useDispatch } from "react-redux"
-import { removeItem, clearCart } from "./store/cartSlice"
+import { removeItem, clearCart } from "../store/cartSlice"
 
 export function CartView() {
   const dispatch = useDispatch()

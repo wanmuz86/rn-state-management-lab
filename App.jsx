@@ -31,7 +31,7 @@ const App = () => {
   //  </ThemeProvider>
    <Provider store={store}>
      <SafeAreaProvider>
-     <SafeAreaView style={styles.safeArea}>
+     <SafeAreaView style={{ flex: 1, backgroundColor: '#eef' }}>
        <MainScreen />
      </SafeAreaView>
      </SafeAreaProvider>

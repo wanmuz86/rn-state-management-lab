@@ -1,7 +1,7 @@
 import React from "react"
 import { View, Text, Button, StyleSheet } from "react-native"
 import { useDispatch, useSelector } from "react-redux"
-import { addItem } from "./store/cartSlice"
+import { addItem } from "../store/cartSlice"
 
 const products = [
   { id: 1, name: "Apple", price: 2 },
