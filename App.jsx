@@ -2,7 +2,7 @@ import React from "react";
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { ScrollView, StatusBar } from "react-native";
 import CounterStateVersion from './src/components/CounterStateVersion'
-import {CounterReducerVersion} from './src/components/CounterReducerVersion'
+import CounterReducerVersion from './src/components/CounterReducerVersion'
 const App = () => {
  return (
     <SafeAreaProvider>
