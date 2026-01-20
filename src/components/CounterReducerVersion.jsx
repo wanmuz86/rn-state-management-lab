@@ -1,6 +1,6 @@
-import React, { useReducer, useEffect } from "react";
+import React, { useReducer, useEffect, useState } from "react";
 import { View, Text, Button, StyleSheet } from "react-native";
-
+import { TextInput } from "react-native";
 
 // If the state geeting to complicated, we define the structure of the state
 // By defining
@@ -30,6 +30,11 @@ function reducer(state, action) {
     
       case "reset":
       return { count: 0 };
+
+      // Example call useReducer with parameter
+      case 'addByInput':
+        // the action that will add from the input
+      return { count: state.count + action.payload}
     
       default:
       return state;
@@ -37,6 +42,10 @@ function reducer(state, action) {
 }
 
 const CounterReducerVersion = () => {
+
+    // Declaring a state/variable textInputValue to be linked to the TextInput
+    const [textInputValue, setTextInputValue]= useState('');
+
   // 3) useReducer hook
   // Use usereducer hook to define the state and actions on it
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -51,6 +60,14 @@ const CounterReducerVersion = () => {
   const increment = () => dispatch({ type: "increment" });
   const decrement = () => dispatch({ type: "decrement" });
   const reset = () => dispatch({ type: "reset" });
+
+  const addFromInput = () => {
+    const value = Number(textInputValue);
+    if (!isNaN(value)) {
+        dispatch({type:'addByInput',payload:value})
+        setTextInputValue('')
+    }
+  }
 
   // 6) Render UI
   return (
@@ -68,6 +85,13 @@ const CounterReducerVersion = () => {
       <View style={styles.buttonRow}>
         <Button title="Reset" onPress={reset} />
       </View>
+      <TextInput
+      // Bind the state to the TextInput
+      value={textInputValue}
+      // This will be called everytime the value of the form changed
+      onChangeText={setTextInputValue}
+      placeholder="Enter a number"/>
+      <Button title="Add from Input" onPress={addFromInput}/>
     </View>
   );
 };
