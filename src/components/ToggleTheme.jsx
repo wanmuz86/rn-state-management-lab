@@ -1,6 +1,6 @@
 import React from "react";
 import { TouchableOpacity, Text, StyleSheet, View } from "react-native";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "../../context/ThemeContext";
 
 export function ThemeToggleButton() {
     // retrieve the mode (light or dark mode), theme and toggleTheme from the useTheme custom hook
