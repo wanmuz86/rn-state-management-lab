@@ -6,6 +6,7 @@ const CounterStateVersion = () => {
   // Declaring a local state
   // variable name is count // getter
   // to change the variable the method setCount
+  // The 0 refers to the initial value of the counter
   const [count, setCount] = useState(0);
 
   // 2) Handler functions
@@ -27,7 +28,7 @@ const CounterStateVersion = () => {
 
       <View style={styles.buttonRow}>
       {/* onPress when the button is pressed call the increment */}
-        <Button title="Increment" onPress={increment} />
+        <Button title="Increment" onPress={()=>setCount(count+1)} />
       </View>
       <View style={styles.buttonRow}>
         <Button title="Decrement" onPress={decrement} />
