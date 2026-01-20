@@ -14,13 +14,14 @@ const App = () => {
      <SafeAreaView style={{ flex: 1, backgroundColor: '#eef' }}>
 
      <StatusBar />
-     <ScrollView contentContainerStyle={{ padding: 16 }}>
+
      {/* Import and Bring out the Component  */}
        {/* <CounterStateVersion />
        <CounterReducerVersion/> */}
+      
        <Header/>
        <ToggleTheme/>
-     </ScrollView>
+
    </SafeAreaView>
    </SafeAreaProvider>
    </ThemeProvider>

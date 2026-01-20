@@ -2,7 +2,7 @@ import React from "react";
 import { TouchableOpacity, Text, StyleSheet, View } from "react-native";
 import { useTheme } from "../../context/ThemeContext";
 
-export function ThemeToggleButton() {
+export function ToggleTheme() {
     // retrieve the mode (light or dark mode), theme and toggleTheme from the useTheme custom hook
  // {} // object destructuring // [] => array destuctuing / arrangement matters
   const { mode, theme, toggleTheme } = useTheme();
