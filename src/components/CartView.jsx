@@ -4,9 +4,15 @@ import { useSelector, useDispatch } from "react-redux"
 import { removeItem, clearCart } from "../store/cartSlice"
 
 export function CartView() {
+    // useDispatch -> retrieving method dispacth to call the action in the reducer
+
   const dispatch = useDispatch()
+    //useSelector: to retrieve the state from the store
+// do not change the variable right away
+// always dispatch an anction if you want to change
   const items = useSelector((state) => state.cart.items)
 
+  //homework revcse on reduce
   const total = items.reduce((sum, item) => sum + item.price, 0)
 
   return (
@@ -23,6 +29,7 @@ export function CartView() {
             <Text style={styles.name}>{item.name}</Text>
             <Text style={styles.price}>RM {item.price}</Text>
           </View>
+          {/* dispatch the removeItem action passing item.id as payload*/}
           <Button
             title="Remove"
             onPress={() => dispatch(removeItem(item.id))}
@@ -33,6 +40,7 @@ export function CartView() {
       {items.length > 0 && (
         <>
           <Text style={styles.total}>Total: RM {total}</Text>
+           {/* dispatch the clearCart action with payload */}
           <Button title="Clear Cart" onPress={() => dispatch(clearCart())} />
         </>
       )}

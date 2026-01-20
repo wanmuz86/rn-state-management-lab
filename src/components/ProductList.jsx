@@ -10,10 +10,16 @@ const products = [
 ]
 
 export function ProductList() {
+  // useDispatch -> retrieving method dispacth to call the action in the reducer
   const dispatch = useDispatch()
+  //useSelector: to retrieve the state from the store
+// do not change the variable right away
+// always dispatch an anction if you want to change
   const cartItems = useSelector((state) => state.cart.items)
 
   const handleAdd = (product) => {
+    // dispatch / call the addItem action
+    // product -> payload
     dispatch(addItem(product))
   }
 
@@ -24,6 +30,7 @@ export function ProductList() {
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Products</Text>
+{/* Homework to see the practial of map here */}
 
       {products.map((p) => {
         const added = isInCart(p.id)
